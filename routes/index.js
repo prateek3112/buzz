@@ -8,4 +8,8 @@ console.log('router is working');
 
 router.get('/',homeController.home);
 
+router.get('/trending',homeController.trending);
+
+router.use('/users',require('./users'));
+
 module.exports = router;

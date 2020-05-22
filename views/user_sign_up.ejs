@@ -1,0 +1,24 @@
+<h1>Sign Up Here!!</h1>
+<style>
+    input{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-radius: 2px;
+        border-color: black;
+    }
+</style>
+
+<form action='/users/create' method="POST">
+
+<input type="text" name="name" placeholder="Enter your Name" required >
+
+<input type="email" name="email" placeholder="Enter your Email" required>
+
+<input type="password" name="password" placeholder="Enter your Password" required>
+
+<input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+<input type="submit" value="Sign Up">
+
+</form>
