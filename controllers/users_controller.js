@@ -17,6 +17,12 @@ module.exports.posts = function(req,res)
 
 module.exports.signUp = function(req,res)
 {
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/users/profile');
+    }
+
+
     return res.render('user_sign_up',
     {
         title : 'Buzz | Sign Up'
@@ -26,6 +32,12 @@ module.exports.signUp = function(req,res)
 
 module.exports.signIn = function(req,res)
 {
+
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/users/profile');
+    }
+
     return res.render('user_sign_in',
     {
         title : 'Buzz | Sign In'
@@ -65,5 +77,16 @@ module.exports.create = function(req,res)
 
 module.exports.createSession = function(req,res)
 {
-    //todo
+    return res.redirect('/');
+
+}
+
+module.exports.destroySession = function(req,res)
+{
+    req.logout();
+    
+
+    res.clearCookie('buzz', {path: '/'});
+    
+    return res.redirect('/');
 }

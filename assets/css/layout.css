@@ -1,6 +1,9 @@
-body
-{
-    margin: 0px;
-    text-align: center;
-    background-color: aquamarine;
+body {
+  margin: 0px;
+}
+
+body #main {
+  height: 100%;
+  top: 100px;
+  position: fixed;
 }
